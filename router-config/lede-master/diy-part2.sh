@@ -8,8 +8,6 @@
 
 # ------------------------------- Main source started -------------------------------
 #
-sed -i 's/^[ \t]*//g' ./.config
-make defconfig
 # 网络配置信息，将从 zzz-default-settings 文件的第2行开始添加
 sed -i "2i # network config" ./package/lean/default-settings/files/zzz-default-settings
 # 默认 IP 地址，旁路由时不会和主路由的 192.168.1.1 冲突
