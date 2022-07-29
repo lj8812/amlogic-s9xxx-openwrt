@@ -18,8 +18,7 @@ sed -i "6i uci set network.lan.ifname='eth0'" ./package/lean/default-settings/fi
 sed -i "7i uci set network.lan.netmask='255.255.255.0'" ./package/lean/default-settings/files/zzz-default-settings    # 子网掩码
 sed -i "8i uci set network.lan.gateway='192.168.6.1'" ./package/lean/default-settings/files/zzz-default-settings  # 默认网关地址（主路由 IP）
 sed -i "9i uci set network.lan.dns='192.168.6.1'" ./package/lean/default-settings/files/zzz-default-settings  # 默认上游 DNS 地址
-sed -i "10i uci set dhcp.lan.ignore='1'" ./package/lean/default-settings/files/zzz-default-settings  # 旁路由关闭DHCP功能（去掉uci前面的#生效）
-sed -i "11i uci delete network.lan.type" ./package/lean/default-settings/files/zzz-default-settings  # 旁路由去掉桥接模式（去掉uci前面的#生效）                         
+sed -i "10i uci set dhcp.lan.ignore='1'" ./package/lean/default-settings/files/zzz-default-settings  # 旁路由关闭DHCP功能（去掉uci前面的#生效）                         
 sed -i "12i uci commit network\n" ./package/lean/default-settings/files/zzz-default-settings
 
 # 5.修改默认主题
